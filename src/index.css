@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 165 15% 7%;
+    --foreground: 72 80% 96%;
+
+    --card: 168 20% 12%;
+    --card-foreground: 72 80% 96%;
+
+    --popover: 168 20% 12%;
+    --popover-foreground: 72 80% 96%;
+
+    --primary: 96 100% 66%;
+    --primary-foreground: 168 20% 8%;
+
+    --secondary: 168 20% 16%;
+    --secondary-foreground: 72 80% 96%;
+
+    --muted: 168 15% 18%;
+    --muted-foreground: 165 10% 55%;
+
+    --accent: 96 100% 66%;
+    --accent-foreground: 168 20% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 72 80% 96%;
+
+    --border: 168 15% 20%;
+    --input: 168 15% 20%;
+    --ring: 96 100% 66%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 168 20% 10%;
+    --sidebar-foreground: 72 80% 96%;
+    --sidebar-primary: 96 100% 66%;
+    --sidebar-primary-foreground: 168 20% 8%;
+    --sidebar-accent: 168 15% 18%;
+    --sidebar-accent-foreground: 72 80% 96%;
+    --sidebar-border: 168 15% 20%;
+    --sidebar-ring: 96 100% 66%;
+
+    /* Custom brand tokens */
+    --brand-lime: 96 100% 66%;
+    --brand-dark: 168 20% 8%;
+    --brand-cream: 72 80% 96%;
+    --brand-glow: 96 100% 66%;
+    --gradient-hero: linear-gradient(135deg, hsl(168 20% 6%) 0%, hsl(168 20% 12%) 50%, hsl(168 20% 6%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(168 20% 14%) 0%, hsl(168 20% 10%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(96 100% 66%) 0%, hsl(120 80% 50%) 100%);
+    --shadow-glow: 0 0 40px hsl(96 100% 66% / 0.15);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  .glow-box {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32 px-4 md:px-8;
+  }
+}
